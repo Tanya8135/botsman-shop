@@ -1,1 +1,24 @@
-@import './body';
+// UTILS
+@import './utils/variables';
+@import './utils/mixin';
+
+// BASE
+@import './base/base';
+@import './base/common';
+@import './base/fonts';
+@import './base/reset';
+
+// COMPONENTS
+@import './components/header';
+// @import './components/hero';
+// @import './components/individ-furniture';
+// @import './components/our-histiry';
+// @import './components/last-public';
+// @import './components/form';
+// @import './components/company-info';
+// @import './components/footer/footer';
+// @import './components/burger-menu/burger-menu';
+// @import './components/burger-menu/bm-social';
+// @import './components/gsap';
+// @import './catalog//search';
+// @import './catalog/catalog';

@@ -1,5 +1,185 @@
+@charset "UTF-8";
+html {
+  scroll-behavior: smooth; /* плавная прокрутка скрол */
+}
+
 body {
-  background: rgba(203, 254, 127, 0.6823529412);
-  color: #2e2e2e;
-  padding: 100px 0 0 100px;
+  background-color: #ebebeb;
+  color: #2c2b29;
+  font-family: "Montserrat", sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.container {
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+/* Montserrat */
+@font-face {
+  display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/montserrat-v26-latin-regular.woff2") format("woff2"), url("../fonts/montserrat-v26-latin-regular.woff") format("woff");
+}
+@font-face {
+  display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../fonts/montserrat-v26-latin-100.woff2") format("woff2"), url("../fonts/montserrat-v26-latin-100.woff") format("woff");
+}
+@font-face {
+  display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../fonts/montserrat-v26-latin-200.woff2") format("woff2"), url("../fonts/montserrat-v26-latin-200.woff") format("woff");
+}
+@font-face {
+  display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/montserrat-v26-latin-300.woff2") format("woff2"), url("../fonts/montserrat-v26-latin-300.woff") format("woff");
+}
+@font-face {
+  display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/montserrat-v26-latin-500.woff2") format("woff2"), url("../fonts/montserrat-v26-latin-500.woff") format("woff");
+}
+@font-face {
+  display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/montserrat-v26-latin-600.woff2") format("woff2"), url("../fonts/montserrat-v26-latin-600.woff2") format("woff");
+}
+@font-face {
+  display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/montserrat-v26-latin-700.woff2") format("woff2"), url("../fonts/montserrat-v26-latin-700.woff") format("woff");
+}
+@font-face {
+  display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/montserrat-v26-latin-900.woff2") format("woff2"), url("../fonts/montserrat-v26-latin-900.woff") format("woff");
+}
+/* Raleway */
+@font-face {
+  display: swap;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/raleway-v29-latin-500.woff2") format("woff2"), url("../fonts/raleway-v29-latin-500.woff") format("woff");
+}
+@font-face {
+  display: swap;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../fonts/raleway-v29-latin-100.woff2") format("woff2"), url("../fonts/raleway-v29-latin-100.woff") format("woff");
+}
+@font-face {
+  display: swap;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../fonts/raleway-v29-latin-200.woff2") format("woff2"), url("../fonts/raleway-v29-latin-200.woff") format("woff");
+}
+@font-face {
+  display: swap;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/raleway-v29-latin-300.woff2") format("woff2"), url("../fonts/raleway-v29-latin-300.woff") format("woff");
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #403730;
+}
+
+address {
+  font-style: normal;
+}
+
+.header-mob {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 15px;
+}
+
+.logo-s {
+  padding: 12px 0;
+  outline: none;
+  border: none;
+  cursor: none;
+}
+
+.header-nav-mob {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.icon-phone-box {
+  margin-right: 22px;
+  padding: 5px;
+}
+
+.icon-phone {
+  fill: #403730;
+  outline: none;
+  border: none;
+  cursor: none;
+}
+.icon-phone:hover {
+  fill: #f6973f;
 }/*# sourceMappingURL=main.css.map */
