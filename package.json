@@ -1,7 +1,7 @@
 {
-  "name": "my-webpack-project",
+  "name": "botsman-shop",
   "version": "1.0.0",
-  "description": "My webpack project",
+  "description": "shop",
   "private": true,
   "scripts": {
     "start": "webpack serve --open --mode development --port 8080",
@@ -17,15 +17,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tanya8135/webpack.git"
+    "url": "git+https://github.com/Tanya8135/botsman-shop.git"
   },
   "keywords": [],
   "author": "Tanya8135",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Tanya8135/webpack/issues"
+    "url": "https://github.com/Tanya8135/botsman-shop/issues"
   },
-  "homepage": "https://github.com/Tanya8135/webpack",
+  "homepage": "https://github.com/Tanya8135/botsman-shop",
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
