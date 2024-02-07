@@ -1,0 +1,14 @@
+body {
+  position: relative;
+  background: #e4ffae;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #2e2e2e;
+  margin: 0;
+  padding: 0;
+  width: 1240px;
+}
+
+.title {
+ padding: 100px 0 0 100px;
+}
