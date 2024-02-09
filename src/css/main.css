@@ -990,4 +990,138 @@ html.sr .load-hidden {
 }
 .policy-info__transform {
   text-transform: uppercase;
+}
+
+.serach-container {
+  padding: 32px 0 60px 0;
+}
+
+.search-form {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  max-width: 270px;
+}
+.search-form__input {
+  font-size: 16px;
+  line-height: 1.1;
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  min-width: 270px;
+  min-height: 34px;
+  color: #2c2b29;
+  padding-left: 12px;
+  border: 1px solid #aeaeae;
+  border-radius: 4px;
+  outline: none;
+}
+.search-form__input:focus {
+  border: 1px solid #403730;
+}
+.search-form__btn {
+  position: absolute;
+  right: 0;
+  max-width: 24px;
+  max-height: 24px;
+  background-color: transparent;
+  border: none;
+  fill: #403730;
+}
+
+.catalog-container {
+  padding: 0 17px 70px 17px;
+}
+
+.form-box-catalog {
+  margin-bottom: 60px;
+}
+
+.catalog-poufs__title {
+  font-size: 30px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  color: #403730;
+  text-transform: uppercase;
+  padding: 0 0 32px 15px;
+}
+
+.catalog-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 52px;
+  max-width: 340px;
+  margin: 0 auto;
+  padding-bottom: 52px;
+}
+
+.list-loadMore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.catalog-item {
+  -webkit-transform: translateX(0.5px);
+          transform: translateX(0.5px);
+}
+
+.btn-loadMore {
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: #403730;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  cursor: pointer;
+}
+.btn-loadMore__arrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 8px;
+}
+
+.btnBack {
+  position: relative;
+  right: -291px;
+  padding: 25px;
+  max-width: 25px;
+  border-radius: 50px;
+  background-color: #f6973f;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.arrow-back {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  fill: #f9f9f9;
+  z-index: 11111;
+}
+
+.catalog-sofa {
+  padding-bottom: 32px;
 }/*# sourceMappingURL=main.css.map */

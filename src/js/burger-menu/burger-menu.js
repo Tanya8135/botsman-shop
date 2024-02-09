@@ -1,5 +1,3 @@
-
-
 const burgerMenu = document.querySelector('.menu-container')
 
 burgerMenu.innerHTML = `

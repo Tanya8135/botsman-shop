@@ -2,6 +2,15 @@ import './css/main.min.css'
 import './js/components/header'
 import './js/burger-menu/burger-menu'
 import './js/helpers/burger-menu'
+// Catalog
+import './js/catalog/search'
+import './js/catalog/catalog'
+import './js/catalog/LoadMoreList/itemPoufs'
+import './js/catalog/LoadMoreList/itemTables'
+import './js/helpers/loadMorePoufs'
+import './js/helpers/loadMoreTables'
+
+// hero
 import './js/components/hero'
 import './js/helpers/heroSlider'
 import './js/components/individ-furniture'
