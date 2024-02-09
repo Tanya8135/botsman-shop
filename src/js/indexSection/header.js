@@ -4,7 +4,7 @@ header.innerHTML = `
 <div class="header-container container">
     <div class="header-mob">
       <div class="logo">
-        <a href="/index.html" class="logo-s">
+        <a href="./index.html" class="logo-s">
           <img src="./images/logoBotsmanMin.svg" alt="logo" class="logo-s" />
         </a>
       </div>
