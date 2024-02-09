@@ -1,0 +1,20 @@
+html {
+  scroll-behavior: smooth; /* плавная прокрутка скрол */
+}
+
+body {
+  background-color: $bg-body;
+  color: $primary-text;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  // overscroll-behavior: none;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}

@@ -1,1 +1,22 @@
 import './css/main.min.css'
+import './js/components/header'
+import './js/burger-menu/burger-menu'
+import './js/helpers/burger-menu'
+// Catalog
+import './js/catalog/search'
+import './js/catalog/catalog'
+import './js/catalog/LoadMoreList/itemPoufs'
+import './js/catalog/LoadMoreList/itemTables'
+import './js/helpers/loadMorePoufs'
+import './js/helpers/loadMoreTables'
+
+// hero
+import './js/components/hero'
+import './js/helpers/heroSlider'
+import './js/components/individ-furniture'
+import './js/components/our-history'
+import './js/components/last-public'
+import './js/helpers/last-public'
+import './js/components/form'
+import './js/footer/footer'
+import './js/helpers/handleHref'

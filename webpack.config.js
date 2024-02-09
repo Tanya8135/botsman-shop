@@ -67,6 +67,12 @@ module.exports = {
             },
         ],
     },
+    devServer: {
+        static: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 8080,
+        historyApiFallback: true,
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
@@ -80,7 +86,8 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: 'src/images', to: 'images' }
+                { from: 'src/images', to: 'images' },
+                { from: 'src/catalog.html', to: 'catalog.html' },
             ]
         })
     ]

@@ -1,0 +1,56 @@
+@mixin mobile {
+  @media screen and (min-width: 320px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mobileMax {
+  @media screen and (min-width: 320px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin tabletMin {
+  @media screen and (min-width: 768px) and (max-width: 1920px) {
+    @content;
+  }
+}
+
+// @mixin desktopMin {
+//     @media screen and (min-width: 1023px) and (max-width: 1440px) {
+//       @content;
+//     }
+//   }
+
+@mixin desktop {
+  @media screen and (min-width: 1024px) and (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+@mixin font($fs, $lh, $ls, $fw) {
+  font-size: $fs;
+  line-height: $lh;
+  letter-spacing: $ls;
+  font-weight: $fw;
+}
+
+@mixin fontMini($fs, $lh, $fw) {
+  font-size: $fs;
+  line-height: $lh;
+  font-weight: $fw;
+}
