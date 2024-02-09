@@ -7,9 +7,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
     entry: {
         main: path.resolve(__dirname, './src/index.js'),
+        catalog: path.resolve(__dirname, './src/catalog.js'),
     },
     output: {
-        filename: 'main.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
     },
     mode: 'development',
@@ -76,6 +77,13 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './src/index.html',
+            filename: 'index.html',
+            chunks: ['main'],
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/catalog.html',
+            filename: 'catalog.html', // Вказуємо ім'я вихідного файлу
+            chunks: ['catalog'], // Вказуємо, який entry використовувати для цього HTML
         }),
         new MiniCssExtractPlugin({
             filename: 'styles.css',
@@ -87,7 +95,7 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 { from: 'src/images', to: 'images' },
-                { from: 'src/catalog.html', to: 'catalog.html' },
+                // { from: 'src/catalog.html', to: 'catalog.html' },
             ]
         })
     ]
