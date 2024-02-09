@@ -1,3 +1,5 @@
+
+
 const burgerMenu = document.querySelector('.menu-container')
 
 burgerMenu.innerHTML = `
@@ -12,7 +14,7 @@ burgerMenu.innerHTML = `
     <div class="burger-menu__box">
       <ul class="burger-menu__list">
         <li class="burger-menu__item">
-          <a href="./catalog.html" class="burger-menu__link">Каталог</a>
+          <a href="/catalog.html" class="burger-menu__link">Каталог</a>
         </li>
         <li class="burger-menu__item">
           <a href="#individ-furniture" class="burger-menu__link">Индивидуальная мебель</a>
