@@ -5,7 +5,7 @@ catalog.innerHTML = `
     <!-- POUFS -->
     <div class="catalog-poufs">
       <h1 hidden></h1>
-      <h2 class="catalog-poufs__title">Пуфи</h2>
+      <h2 class="catalog-poufs__title" id="poufs">Пуфи</h2>
 
       <ul class="catalog-list">
         <li class="catalog-item">
@@ -73,7 +73,7 @@ catalog.innerHTML = `
     </button>
 
     <!-- SOFA -->
-    <div class="catalog-sofa">
+    <div class="catalog-sofa" id="sofa">
       <h2 class="catalog-poufs__title">Дивани</h2>
       <ul class="catalog-list">
         <li class="catalog-item">
@@ -93,7 +93,7 @@ catalog.innerHTML = `
     </div>
 
     <!-- Tables -->
-    <div class="catalog-table">
+    <div class="catalog-table" id="tables">
       <h2 class="catalog-poufs__title">Столи</h2>
       <ul class="catalog-list table-list">
         <li class="catalog-item table-item">
