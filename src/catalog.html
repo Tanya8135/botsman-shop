@@ -13,6 +13,35 @@
       id="mobile-menu"
     ></div>
     <main>
+      <article class="art-position" id="modalTrigger">
+        <img
+          srcset="
+            ./images/mob/catalog/pouf/pink_poug_160.png   160w,
+            ./images/mob/catalog/pouf/pink_poug@2_160.png 320w
+          "
+          sizes="(min-width: 375px) 160px, 100vw"
+          src="./images/mob/catalog/pouf/pink_poug_160.png"
+          alt="Pink pouf"
+        />
+        <div class="catalog-name">
+          <p class="catalog-name__text">Pink pouf</p>
+        </div>
+
+        <div class="backdrop is-hidden">
+          <div class="modal-hero">
+            <p>Modal</p>
+            <ul>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+            </ul>
+            <button class="cardBtnClose">Close</button>
+          </div>
+        </div>
+      </article>
+
       <section class="search"></section>
       <section class="catalog"></section>
       <section class="form-section"></section>
