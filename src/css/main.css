@@ -1034,6 +1034,10 @@ html.sr .load-hidden {
   fill: #403730;
 }
 
+.ctlg-art {
+  border: 3px solid orange;
+}
+
 .catalog-container {
   padding: 0 17px 70px 17px;
 }
@@ -1125,4 +1129,65 @@ html.sr .load-hidden {
 
 .catalog-sofa {
   padding-bottom: 32px;
+}
+
+.art-position {
+  position: relative;
+}
+
+.catalog-name {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(217, 217, 217, 0.7);
+  min-width: 160px;
+  min-height: 32px;
+  z-index: 11;
+}
+.catalog-name__text {
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500;
+  padding: 5px 0 0 10px;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 111;
+  opacity: 1;
+  -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-hero {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1), visibility 0ms 200ms;
+  transition: opacity 200ms cubic-bezier(0.4, 0, 0.2, 1), visibility 0ms 200ms;
+}
+
+.cardBtnClose {
+  border-radius: 10px;
 }/*# sourceMappingURL=main.css.map */

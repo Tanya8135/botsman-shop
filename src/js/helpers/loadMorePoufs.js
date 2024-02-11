@@ -29,6 +29,10 @@ function showMoreItems() {
 
     existingUl.append(...itemsToAdd);
 
+    setTimeout(() => {
+        itemsToAdd[itemsToAdd.length - 1].scrollIntoView({ behavior: 'smooth' });
+    })
+
     itemShow += itemsToShow;
 
     if (itemShow >= listPoufs.length) {
