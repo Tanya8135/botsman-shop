@@ -1,6 +1,30 @@
 const listPouf = [
   {
-    srcset: "./images/mob/catalog/pouf/green_pouf_160.png 160w, ./images/mob/catalog/pouf/green_pouf@2_160.png 320w",
+    srcset: "./images/mob/catalog/pouf/pink_poug_160.png 160w, ./images/mob/catalog/pouf/pink_poug@2_160.png 320w",
+    sizes: "(min-width: 375px) 160px, 100vw",
+    src: "./images/mob/catalog/pouf/pink_poug_160.png",
+    alt: "Pink pouf"
+  },
+  {
+    srcset: "./images/mob/catalog/pouf/black_pouf_160.png 160w, ./images/mob/catalog/pouf/black_pouf@2_160.png 320w",
+    sizes: "(min-width: 375px) 160px, 100vw",
+    src: "./images/mob/catalog/pouf/black_pouf_160.png",
+    alt: "Black pouf"
+  },
+  {
+    srcset: "./images/mob/catalog/pouf/gray_pouf_160.png 160w, ./images/mob/catalog/pouf/gray_pouf@2_160.png 320w",
+    sizes: "(min-width: 375px) 160px, 100vw",
+    src: "./images/mob/catalog/pouf/gray_pouf_160.png",
+    alt: "Black pouf"
+  },
+  {
+    srcset: "./images/mob/catalog/pouf/blue_pouf_160.png 160w, ./images/mob/catalog/pouf/blue_pouf@2_160.png 320w",
+    sizes: "(min-width: 375px) 160px, 100vw",
+    src: "./images/mob/catalog/pouf/blue_pouf_160.png",
+    alt: "Black pouf"
+  },
+  {
+    srcset: ".//images/mob/catalog/pouf/green_pouf_160 160w, ./images/mob/catalog/pouf/green_pouf@2_160.png 320w",
     sizes: "(min-width: 375px) 160px, 100vw",
     src: "./images/mob/catalog/pouf/green_pouf_160.png",
     alt: "Green pouf"

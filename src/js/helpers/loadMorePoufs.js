@@ -4,7 +4,7 @@ const existingUl = document.querySelector('.catalog-list');
 const loadMoreBtn = document.querySelector('.btn-loadMore');
 
 const itemsToShow = 4;
-let itemShow = 0;
+let itemShow = 4;
 
 function showMoreItems() {
     const additionalItems = listPoufs.slice(itemShow, itemShow + itemsToShow);
@@ -31,12 +31,13 @@ function showMoreItems() {
 
     setTimeout(() => {
         itemsToAdd[itemsToAdd.length - 1].scrollIntoView({ behavior: 'smooth' });
-    })
+    }, 200);
 
     itemShow += itemsToShow;
 
     if (itemShow >= listPoufs.length) {
-        loadMoreBtn.style.display = 'none';
+        // loadMoreBtn.style.display = 'none';
+        loadMoreBtn.remove()
         const btnBack = document.createElement('button');
         existingUl.append(btnBack);
         btnBack.className = 'btnBack';
