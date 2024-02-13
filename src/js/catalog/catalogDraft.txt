@@ -105,3 +105,17 @@ catalog.innerHTML = `
     </button>
   </div>
 `
+
+
+
+
+
+// const catalogList = catalog.querySelector('.catalog-list');
+
+// catalogList.addEventListener('click', function (event) {
+//   const clickedItem = event.target.closest('.catalog-item');
+//   if (clickedItem) {
+//     const itemId = clickedItem.id;
+//     // renderCardProduct(itemId);
+//   }
+// });

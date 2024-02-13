@@ -1194,6 +1194,15 @@ html.sr .load-hidden {
   border-radius: 10px;
 }
 
+.card-product {
+  position: relative;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: rgba(255, 235, 205, 0.342);
+}
+
 .card-product__box {
   display: -webkit-box;
   display: -ms-flexbox;
