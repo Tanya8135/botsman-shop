@@ -7,7 +7,7 @@ import './js/helpers/burger-menu'
 
 import './js/catalog/search'
 import './js/helpers/handleSearch'
-import './js/catalog/card-product'
+// import './js/catalog/card-product'
 // import './js/helpers/openCP'
 
 import './js/catalog/catalog'
