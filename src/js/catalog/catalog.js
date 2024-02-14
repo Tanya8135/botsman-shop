@@ -1,3 +1,7 @@
+import listPouf from "./LoadMoreList/itemPoufs";
+import cardPouf from "./listProduct/cardPouf";
+// import { v4 as uuidv4 } from 'uuid';
+
 const catalog = document.querySelector('.catalog')
 
 catalog.innerHTML = `
@@ -7,62 +11,10 @@ catalog.innerHTML = `
       <h1 hidden></h1>
       <h2 class="catalog-poufs__title" id="poufs">Пуфи</h2>
 
-      <ul class="catalog-list">
-        <li class="catalog-item">
-          <article>
-            <img
-              srcset="
-                ./images/mob/catalog/pouf/pink_poug_160.png   160w,
-                ./images/mob/catalog/pouf/pink_poug@2_160.png 320w
-              "
-              sizes="(min-width: 375px) 160px, 100vw"
-              src="./images/mob/catalog/pouf/pink_poug_160.png"
-              alt="Pink pouf"
-            />
-          </article>
-        </li>
-        <li class="catalog-item">
-          <article>
-            <img
-              srcset="
-                ./images/mob/catalog/pouf/black_pouf_160.png   160w,
-                ./images/mob/catalog/pouf/black_pouf@2_160.png 320w
-              "
-              sizes="(min-width: 375px) 160px, 100vw"
-              src="./images/mob/catalog/pouf/black_pouf_160.png"
-              alt="Black pouf"
-            />
-          </article>
-        </li>
-        <li class="catalog-item">
-          <article>
-            <img
-              srcset="
-                ./images/mob/catalog/pouf/gray_pouf_160.png   160w,
-                ./images/mob/catalog/pouf/gray_pouf@2_160.png 320w
-              "
-              sizes="(min-width: 375px) 160px, 100vw"
-              src="./images/mob/catalog/pouf/gray_pouf_160.png"
-              alt="Gray pouf"
-            />
-          </article>
-        </li>
-        <li class="catalog-item">
-          <article>
-            <img
-              srcset="
-                ./images/mob/catalog/pouf/blue_pouf_160.png   160w,
-                ./images/mob/catalog/pouf/blue_pouf@2_160.png 320w
-              "
-              sizes="(min-width: 375px) 160px, 100vw"
-              src="./images/mob/catalog/pouf/blue_pouf_160.png"
-              alt="Blue pouf"
-            />
-          </article>
-        </li>
-      </ul>
+      <ul class="catalog-list"></ul>
+      <div class="card-product is-none container"></div>
     </div>
-    <!-- <ul class="list-loadMore"></ul> -->
+
     <button type="button" class="btn-loadMore">
       Показати більше
       <div class="btn-loadMore__arrow">
@@ -71,92 +23,80 @@ catalog.innerHTML = `
         </svg>
       </div>
     </button>
+</div>
+`;
 
-    <!-- SOFA -->
-    <div class="catalog-sofa" id="sofa">
-      <h2 class="catalog-poufs__title">Дивани</h2>
-      <ul class="catalog-list">
-        <li class="catalog-item">
-          <article>
-            <img
-              srcset="
-                ./images/mob/catalog/sofa/sofa_160.png   160w,
-                ./images/mob/catalog/sofa/sofa@2_160.png 320w
-              "
-              sizes="(min-width: 375px) 160px, 100vw"
-              src="./images/mob/catalog/sofa/sofa_160.png"
-              alt="Yellow sofa"
-            />
-          </article>
-        </li>
-      </ul>
-    </div>
+const itemsToShow = 4
+const itemShow = 0
 
-    <!-- Tables -->
-    <div class="catalog-table" id="tables">
-      <h2 class="catalog-poufs__title">Столи</h2>
-      <ul class="catalog-list table-list">
-        <li class="catalog-item table-item">
-          <article>
+const cardProduct = document.querySelector('.card-product');
+const itemCardPouf = document.createElement('div');
+itemCardPouf.className = 'card-product__box';
+
+function renderCardProduct(itemId) {
+  const desiredCard = cardPouf.find(item => item.id === itemId);
+
+  if (desiredCard) {
+
+    // Оновлення innerHTML для нових даних
+    itemCardPouf.innerHTML = `
             <img
-              srcset="
-                ./images/mob/catalog/table/rodos_table_white_160.png   160w,
-                ./images/mob/catalog/table/rodos_table_white@2_160.png 320w
-              "
-              sizes="(min-width: 375px) 160px, 100vw"
-              src="./images/mob/catalog/table/rodos_table_white_160.png"
-              alt=""
+                srcset="${desiredCard.srcset}"
+                sizes="${desiredCard.sizes}"
+                src="${desiredCard.src}"
+                alt="${desiredCard.alt}"
             />
-          </article>
-        </li>
-        <li class="catalog-item table-item">
-          <article>
-            <img
-              srcset="
-                ./images/mob/catalog/table/mylolaev_table_160.png   160w,
-                ./images/mob/catalog/table/mylolaev_table@2_160.png 320w
-              "
-              sizes="(min-width: 375px) 160px, 100vw"
-              src="./images/mob/catalog/table/mylolaev_table_160.png"
-              alt=""
-            />
-          </article>
-        </li>
-        <li class="catalog-item table-item">
-          <article>
-            <img
-              srcset="
-                ./images/mob/catalog/table/rodos_table_red_160.png   160w,
-                ./images/mob/catalog/table/rodos_table_red@2_160.png 320w
-              "
-              sizes="(min-width: 375px) 160px, 100vw"
-              src="./images/mob/catalog/table/rodos_table_red_160.png"
-              alt=""
-            />
-          </article>
-        </li>
-        <li class="catalog-item table-item">
-          <article>
-            <img
-              srcset="
-                ./images/mob/catalog/table/rodos_table_dark-gray_160.png   160w,
-                ./images/mob/catalog/table/rodos_table_dark-gray@2_160.png 320w
-              "
-              sizes="(min-width: 375px) 160px, 100vw"
-              src="./images/mob/catalog/table/rodos_table_dark-gray_160.png"
-              alt=""
-            />
-          </article>
-        </li>
-      </ul>
-    </div>
-    <button type="button" class="btn-loadMore btnTable-loadMore">
-      Показати більше
-      <div class="btn-loadMore__arrow">
-        <svg width="24" height="22">
-          <use href="./images/icons.svg#icon-arrow"></use>
-        </svg>
-      </div>
-    </button>
-  </div>
-`
+            <div class="cp-text-box">
+                <p class="cp-name">${desiredCard.name}</p>
+                <p class="cp-descr">${desiredCard.description}</p>
+                <p class="cp-price">${desiredCard.price}</p>
+                <p class="cp-art">${desiredCard.artNum}</p>
+            </div>
+        `;
+
+    // Додати до cardProduct
+    cardProduct.innerHTML = ''
+    cardProduct.appendChild(itemCardPouf);
+    console.log(desiredCard);
+  } else {
+    console.error(`Елемент із id ${itemId} не знайдений у масиві cardPouf`);
+  }
+}
+
+function renderCard() {
+  const addItemArt = listPouf.slice(itemShow, itemShow + itemsToShow)
+
+  const addItemContent = addItemArt.map((item, index) => {
+    // Додаємо id до кожного елементу, якщо він існує
+    const itemId = cardPouf[index]?.id;
+
+    return `
+        <li class="catalog-item" id="${itemId}">
+        <article class="art-cardOpen">
+          <img
+            srcset="${item.srcset}"
+            sizes="${item.sizes}"
+            src="${item.src}"
+            alt="${item.alt}"
+          />
+          <div class="catalog-name">
+            <p class="catalog-name__text">${item.name}</p>
+          </div>
+        </article>
+      </li>
+    `;
+  })
+
+  catalog.querySelector('.catalog-list').innerHTML = addItemContent.join('')
+}
+
+renderCard()
+const catalogList = catalog.querySelector('.catalog-list');
+
+catalogList.addEventListener('click', function (e) {
+  const clickedItem = e.target.closest('.catalog-item');
+  if (clickedItem) {
+    const itemId = clickedItem.id;
+    renderCardProduct(itemId);
+  }
+});

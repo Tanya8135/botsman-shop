@@ -1,4 +1,6 @@
 html {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth; /* плавная прокрутка скрол */
 }
 
@@ -18,3 +20,4 @@ img {
   height: auto;
   object-fit: cover;
 }
+

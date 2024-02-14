@@ -1,5 +1,7 @@
 @charset "UTF-8";
 html {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth; /* плавная прокрутка скрол */
 }
 
@@ -1190,4 +1192,103 @@ html.sr .load-hidden {
 
 .cardBtnClose {
   border-radius: 10px;
+}
+
+.card-product {
+  position: relative;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: rgba(255, 235, 205, 0.342);
+}
+
+.card-product__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.cp-text-box {
+  padding-bottom: 52px;
+}
+
+.cp-name {
+  font-size: 22px;
+  line-height: 1.7;
+  font-weight: 500;
+  padding: 24px 0 20px 16px;
+  text-transform: uppercase;
+}
+
+.cp-descr {
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+
+.cp-price {
+  font-size: 24px;
+  line-height: 0.9;
+  font-weight: 500;
+  padding: 32px 0 32px 16px;
+}
+
+.cp-art {
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 500;
+  padding-left: 16px;
+}
+
+.btn-box-cp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 32px;
+}
+
+.btn-cp {
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: 0.01;
+  font-weight: 500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #403730;
+  padding: 5px 3px;
+}
+
+.arrow-cp {
+  max-width: 24px;
+  max-height: 24px;
+  fill: #403730;
+}
+
+.btn-cp-prev {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin-right: 16px;
+}
+
+.btn-cp-next {
+  margin-left: 16px;
 }/*# sourceMappingURL=main.css.map */
