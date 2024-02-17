@@ -25,7 +25,18 @@ const cardPouf = [
         price: "9000 грн",
         artNum: "№00000",
     },
-
+    {
+        id: '333',
+        // id: uuidv4(),
+        srcset: "./images/mob/card-product/black_pouf_330.png   330w, ./images/mob/card-product/black_pouf@2_330.png 660w",
+        sizes: "(min-width: 375px) 330px, 100vw",
+        src: "./images/mob/card-product/black_pouf_330.png",
+        alt: "black pouf",
+        name: "Black pouf",
+        description: "Lorem ipsum dolor sit amet consectetur. Odio sit molestie erat eget quam tellus ipsum nibh.Arcu integer mi massa nascetur tristique vitae euismod ut in.Urna mauris habitant augue senectus tellus venenatis nibh.Amet orci sed et placerat.Enim aliquet morbi ultricies consectetur.Quis sed volutpat enim enim.",
+        price: "9000 грн",
+        artNum: "№00000",
+    }
 
 
 ]
