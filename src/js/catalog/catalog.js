@@ -1,6 +1,6 @@
-import listPouf from "./LoadMoreList/itemPoufs";
-import cardPouf from "./listProduct/cardPouf";
-// import { v4 as uuidv4 } from 'uuid';
+import listPouf from "./LoadMoreList/itemPoufs"
+import cardPouf from "./listProduct/cardPouf"
+// import { v4 as uuidv4 } from 'uuid'
 
 const catalog = document.querySelector('.catalog')
 
@@ -24,17 +24,18 @@ catalog.innerHTML = `
       </div>
     </button>
 </div>
-`;
+`
 
 const itemsToShow = 4
 const itemShow = 0
 
-const cardProduct = document.querySelector('.card-product');
-const itemCardPouf = document.createElement('div');
-itemCardPouf.className = 'card-product__box';
+const cardProduct = document.querySelector('.card-product')
+const itemCardPouf = document.createElement('div')
+
+itemCardPouf.className = 'card-product__box'
 
 function renderCardProduct(itemId) {
-  const desiredCard = cardPouf.find(item => item.id === itemId);
+  const desiredCard = cardPouf.find(item => item.id === itemId)
 
   if (desiredCard) {
 
@@ -52,14 +53,26 @@ function renderCardProduct(itemId) {
                 <p class="cp-price">${desiredCard.price}</p>
                 <p class="cp-art">${desiredCard.artNum}</p>
             </div>
-        `;
+        `
+
+    const closeBtn = document.createElement('button')
+    closeBtn.type = 'button'
+    closeBtn.className = 'closeTest'
+    closeBtn.textContent = 'Close'
+
+    itemCardPouf.appendChild(closeBtn)
 
     // Додати до cardProduct
     cardProduct.innerHTML = ''
-    cardProduct.appendChild(itemCardPouf);
-    console.log(desiredCard);
+    cardProduct.appendChild(itemCardPouf)
+    console.log(desiredCard)
+
+    closeBtn.addEventListener('click', function () {
+      cardProduct.innerHTML = ''
+      localStorage.removeItem('activeItemId');
+    })
   } else {
-    console.error(`Елемент із id ${itemId} не знайдений у масиві cardPouf`);
+    console.error(`Елемент із id ${itemId} не знайдений у масиві cardPouf`)
   }
 }
 
@@ -68,7 +81,7 @@ function renderCard() {
 
   const addItemContent = addItemArt.map((item, index) => {
     // Додаємо id до кожного елементу, якщо він існує
-    const itemId = cardPouf[index]?.id;
+    const itemId = cardPouf[index]?.id
 
     return `
         <li class="catalog-item" id="${itemId}">
@@ -84,19 +97,29 @@ function renderCard() {
           </div>
         </article>
       </li>
-    `;
+    `
   })
 
   catalog.querySelector('.catalog-list').innerHTML = addItemContent.join('')
 }
 
 renderCard()
-const catalogList = catalog.querySelector('.catalog-list');
+
+const catalogList = catalog.querySelector('.catalog-list')
 
 catalogList.addEventListener('click', function (e) {
-  const clickedItem = e.target.closest('.catalog-item');
+  const clickedItem = e.target.closest('.catalog-item')
   if (clickedItem) {
-    const itemId = clickedItem.id;
-    renderCardProduct(itemId);
+    const itemId = clickedItem.id
+    renderCardProduct(itemId)
+
+    localStorage.setItem('activeItemId', itemId)
   }
-});
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+  const activeItemId = localStorage.getItem('activeItemId')
+  if (activeItemId) {
+    renderCardProduct(activeItemId)
+  }
+})

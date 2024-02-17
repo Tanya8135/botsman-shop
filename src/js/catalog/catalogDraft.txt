@@ -178,3 +178,14 @@ FILE JS
 // //     renderCardProduct(itemId);
 // //   }
 // // });
+
+
+
+
+*LOCAL__STORAGE*
+document.addEventListener('DOMContentLoaded', function () {
+  const activeItemId = localStorage.getItem('activeItemId')
+  if (activeItemId) {
+    renderCardProduct(activeItemId)
+  }
+})
