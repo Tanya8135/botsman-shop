@@ -36,6 +36,7 @@ itemCardPouf.className = 'card-product__box'
 
 function renderCardProduct(itemId) {
   const desiredCard = cardPouf.find(item => item.id === itemId)
+  const urlParams = new URLSearchParams()
 
   if (desiredCard) {
 
@@ -71,6 +72,10 @@ function renderCardProduct(itemId) {
       cardProduct.innerHTML = ''
       localStorage.removeItem('activeItemId');
     })
+
+    urlParams.set('name', desiredCard.name)
+    urlParams.set('artNum', desiredCard.artNum)
+    urlParams.set('price', desiredCard.price)
   } else {
     console.error(`Елемент із id ${itemId} не знайдений у масиві cardPouf`)
   }
@@ -112,6 +117,14 @@ catalogList.addEventListener('click', function (e) {
   if (clickedItem) {
     const itemId = clickedItem.id
     renderCardProduct(itemId)
+
+    const desiredCard = cardPouf.find(item => item.id === itemId)
+
+    const clickedItemParams = new URLSearchParams()
+    clickedItemParams.set('name', desiredCard?.name || '')
+    clickedItemParams.set('artNum', desiredCard?.artNum || '')
+    clickedItemParams.set('price', desiredCard?.price || '')
+    window.location.hash = clickedItemParams.toString()
 
     localStorage.setItem('activeItemId', itemId)
   }
