@@ -39,6 +39,24 @@ function renderCardProduct(itemId) {
   const urlParams = new URLSearchParams()
 
   if (desiredCard) {
+    /**
+ * CLOSE
+ */
+    const closeBtn = document.createElement('button')
+    closeBtn.type = 'button'
+    closeBtn.className = 'closeCardProd'
+    closeBtn.textContent = 'Close'
+
+    if (!urlParams.has('name') && !urlParams.has('artNum') && !urlParams.has('price')) {
+      itemCardPouf.innerHTML = ''
+    }
+
+    /**
+* LINK CLOSE
+*/
+    // const closeLink = document.createElement('a')
+    // closeLink.href = './catalog.html'
+    // closeLink.textContent = 'Go to back'
 
     // Оновлення innerHTML для нових даних
     itemCardPouf.innerHTML = `
@@ -55,13 +73,8 @@ function renderCardProduct(itemId) {
                 <p class="cp-art">${desiredCard.artNum}</p>
             </div>
         `
-
-    const closeBtn = document.createElement('button')
-    closeBtn.type = 'button'
-    closeBtn.className = 'closeTest'
-    closeBtn.textContent = 'Close'
-
     itemCardPouf.appendChild(closeBtn)
+    // itemCardPouf.appendChild(closeLink)
 
     // Додати до cardProduct
     cardProduct.innerHTML = ''
@@ -70,7 +83,8 @@ function renderCardProduct(itemId) {
 
     closeBtn.addEventListener('click', function () {
       cardProduct.innerHTML = ''
-      localStorage.removeItem('activeItemId');
+      localStorage.removeItem('activeItemId')
+      window.location.href = './catalog.html'
     })
 
     urlParams.set('name', desiredCard.name)
@@ -136,3 +150,11 @@ document.addEventListener('DOMContentLoaded', function () {
     renderCardProduct(activeItemId)
   }
 })
+
+// window.addEventListener('popstate', function () {
+//   const urlParams = new URLSearchParams(window.location.search)
+
+//   if (!urlParams.has('name') && !urlParams.has('artNum') && !urlParams.has('price')) {
+//     itemCardPouf.innerHTML = ''
+//   }
+// })

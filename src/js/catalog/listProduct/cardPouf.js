@@ -11,7 +11,7 @@ const cardPouf = [
         name: "Pink pouf",
         description: "Lorem ipsum dolor sit amet consectetur. Odio sit molestie erat eget quam tellus ipsum nibh.Arcu integer mi massa nascetur tristique vitae euismod ut in.Urna mauris habitant augue senectus tellus venenatis nibh.Amet orci sed et placerat.Enim aliquet morbi ultricies consectetur.Quis sed volutpat enim enim.",
         price: "9000 грн",
-        artNum: "№00000",
+        artNum: "№00001",
     },
     {
         id: '222',
@@ -23,7 +23,7 @@ const cardPouf = [
         name: "Black pouf",
         description: "Lorem ipsum dolor sit amet consectetur. Odio sit molestie erat eget quam tellus ipsum nibh.Arcu integer mi massa nascetur tristique vitae euismod ut in.Urna mauris habitant augue senectus tellus venenatis nibh.Amet orci sed et placerat.Enim aliquet morbi ultricies consectetur.Quis sed volutpat enim enim.",
         price: "9000 грн",
-        artNum: "№00000",
+        artNum: "№00002",
     },
     {
         id: '333',
@@ -35,7 +35,7 @@ const cardPouf = [
         name: "Black pouf",
         description: "Lorem ipsum dolor sit amet consectetur. Odio sit molestie erat eget quam tellus ipsum nibh.Arcu integer mi massa nascetur tristique vitae euismod ut in.Urna mauris habitant augue senectus tellus venenatis nibh.Amet orci sed et placerat.Enim aliquet morbi ultricies consectetur.Quis sed volutpat enim enim.",
         price: "9000 грн",
-        artNum: "№00000",
+        artNum: "№00003",
     }
 
 
