@@ -47,17 +47,6 @@ function renderCardProduct(itemId) {
     closeBtn.className = 'closeCardProd'
     closeBtn.textContent = 'Close'
 
-    if (!urlParams.has('name') && !urlParams.has('artNum') && !urlParams.has('price')) {
-      itemCardPouf.innerHTML = ''
-    }
-
-    /**
-* LINK CLOSE
-*/
-    // const closeLink = document.createElement('a')
-    // closeLink.href = './catalog.html'
-    // closeLink.textContent = 'Go to back'
-
     // Оновлення innerHTML для нових даних
     itemCardPouf.innerHTML = `
             <img
@@ -150,11 +139,3 @@ document.addEventListener('DOMContentLoaded', function () {
     renderCardProduct(activeItemId)
   }
 })
-
-// window.addEventListener('popstate', function () {
-//   const urlParams = new URLSearchParams(window.location.search)
-
-//   if (!urlParams.has('name') && !urlParams.has('artNum') && !urlParams.has('price')) {
-//     itemCardPouf.innerHTML = ''
-//   }
-// })
