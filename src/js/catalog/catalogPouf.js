@@ -37,6 +37,7 @@ itemCardPouf.className = 'card-product__box'
 function renderCardProduct(itemId) {
   const desiredCard = cardPouf.find(item => item.id === itemId)
   const urlParams = new URLSearchParams()
+  console.log(itemId);
 
   if (desiredCard) {
     /**
@@ -63,7 +64,6 @@ function renderCardProduct(itemId) {
             </div>
         `
     itemCardPouf.appendChild(closeBtn)
-    // itemCardPouf.appendChild(closeLink)
 
     // Додати до cardProduct
     cardProduct.innerHTML = ''
