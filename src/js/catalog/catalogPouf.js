@@ -26,8 +26,8 @@ catalog.innerHTML = `
 </div>
 `
 
-const itemsToShow = 4
-const itemShow = 0
+// const itemsToShow = 4
+// const itemShow = 0
 
 const cardProduct = document.querySelector('.card-product')
 const itemCardPouf = document.createElement('div')
@@ -83,6 +83,9 @@ function renderCardProduct(itemId) {
     console.error(`Елемент із id ${itemId} не знайдений у масиві cardPouf`)
   }
 }
+
+const itemsToShow = 4
+const itemShow = 0
 
 function renderCard() {
   const addItemArt = listPouf.slice(itemShow, itemShow + itemsToShow)
