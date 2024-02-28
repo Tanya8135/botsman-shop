@@ -15,7 +15,7 @@ import './js/catalog/catalogPouf'
 
 import './js/catalog/LoadMoreList/itemPoufs'
 // import './js/catalog/LoadMoreList/itemTables'
-import './js/helpers/loadMorePoufs'
+// import './js/helpers/loadMorePoufs'
 // import './js/helpers/loadMoreTables'
 
 

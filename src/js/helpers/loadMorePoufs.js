@@ -51,7 +51,7 @@ function showMoreItems() {
     itemShow += itemsToShow;
 
     if (itemShow >= listPoufs.length) {
-        loadMoreBtn.remove()
+        // loadMoreBtn.remove()
         const btnBack = document.createElement('button');
         existingUl.append(btnBack);
         btnBack.className = 'btnBack';
