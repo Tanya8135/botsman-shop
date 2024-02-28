@@ -10,7 +10,7 @@ import './js/helpers/handleSearch'
 // import './js/catalog/card-product'
 // import './js/helpers/openCP'
 
-import './js/catalog/catalog'
+import './js/catalog/catalogPouf'
 
 
 import './js/catalog/LoadMoreList/itemPoufs'

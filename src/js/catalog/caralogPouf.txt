@@ -26,8 +26,8 @@ catalog.innerHTML = `
 </div>
 `
 
-const itemsToShow = 4
-const itemShow = 0
+// const itemsToShow = 4
+// const itemShow = 0
 
 const cardProduct = document.querySelector('.card-product')
 const itemCardPouf = document.createElement('div')
@@ -37,8 +37,16 @@ itemCardPouf.className = 'card-product__box'
 function renderCardProduct(itemId) {
   const desiredCard = cardPouf.find(item => item.id === itemId)
   const urlParams = new URLSearchParams()
+  console.log(itemId);
 
   if (desiredCard) {
+    /**
+ * CLOSE
+ */
+    const closeBtn = document.createElement('button')
+    closeBtn.type = 'button'
+    closeBtn.className = 'closeCardProd'
+    closeBtn.textContent = 'Close'
 
     // Оновлення innerHTML для нових даних
     itemCardPouf.innerHTML = `
@@ -55,12 +63,6 @@ function renderCardProduct(itemId) {
                 <p class="cp-art">${desiredCard.artNum}</p>
             </div>
         `
-
-    const closeBtn = document.createElement('button')
-    closeBtn.type = 'button'
-    closeBtn.className = 'closeTest'
-    closeBtn.textContent = 'Close'
-
     itemCardPouf.appendChild(closeBtn)
 
     // Додати до cardProduct
@@ -70,7 +72,8 @@ function renderCardProduct(itemId) {
 
     closeBtn.addEventListener('click', function () {
       cardProduct.innerHTML = ''
-      localStorage.removeItem('activeItemId');
+      localStorage.removeItem('activeItemId')
+      window.location.href = './catalog.html'
     })
 
     urlParams.set('name', desiredCard.name)
@@ -80,6 +83,9 @@ function renderCardProduct(itemId) {
     console.error(`Елемент із id ${itemId} не знайдений у масиві cardPouf`)
   }
 }
+
+const itemsToShow = 4
+const itemShow = 0
 
 function renderCard() {
   const addItemArt = listPouf.slice(itemShow, itemShow + itemsToShow)

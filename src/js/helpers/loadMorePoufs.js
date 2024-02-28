@@ -4,7 +4,7 @@ const existingUl = document.querySelector('.catalog-list');
 const loadMoreBtn = document.querySelector('.btn-loadMore');
 
 const itemsToShow = 4;
-let itemShow = 4;
+let itemShow = 0;
 
 function showMoreItems() {
     const additionalItems = listPoufs.slice(itemShow, itemShow + itemsToShow);
@@ -72,9 +72,9 @@ function showMoreItems() {
     })
 }
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     // Викликайте showMoreItems при завантаженні сторінки
-//     showMoreItems()
-// })
+document.addEventListener('DOMContentLoaded', () => {
+    // Викликайте showMoreItems при завантаженні сторінки
+    showMoreItems()
+})
 
 loadMoreBtn.addEventListener('click', showMoreItems);
