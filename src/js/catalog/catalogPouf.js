@@ -1,12 +1,8 @@
 import listPouf from "./LoadMoreList/itemPoufs"
-import cardPouf from './listProduct/cardPouf'
+import cardPouf from "./listProduct/cardPouf"
 // import { v4 as uuidv4 } from 'uuid'
 
 const catalog = document.querySelector('.catalog')
-const existingUl = document.querySelector('.catalog-list');
-// const loadMoreBtn = document.querySelector('.btn-loadMore');
-const cardProduct = document.querySelector('.card-product')
-const itemCardPouf = document.createElement('div')
 
 catalog.innerHTML = `
 <div class="catalog-container container">
@@ -29,6 +25,12 @@ catalog.innerHTML = `
     </button>
 </div>
 `
+
+// const itemsToShow = 4
+// const itemShow = 0
+
+const cardProduct = document.querySelector('.card-product')
+const itemCardPouf = document.createElement('div')
 
 itemCardPouf.className = 'card-product__box'
 
@@ -80,22 +82,13 @@ function renderCardProduct(itemId) {
   } else {
     console.error(`Елемент із id ${itemId} не знайдений у масиві cardPouf`)
   }
-  document.addEventListener('DOMContentLoaded', () => {
-    renderCardProduct(itemId, cardProduct)
-  })
 }
 
 const itemsToShow = 4
-let itemShow = 0
+const itemShow = 0
 
 function renderCard() {
   const addItemArt = listPouf.slice(itemShow, itemShow + itemsToShow)
-  // Отримайте поточний список елементів з Local Storage (якщо він там є)
-  const storedItems = JSON.parse(localStorage.getItem('catalogItems')) || []
-  // Додайте нові елементи до збережених елементів
-  const updatedItems = storedItems.concat(addItemArt)
-  // Збережіть оновлений список у Local Storage
-  localStorage.setItem('catalogItems', JSON.stringify(updatedItems))
 
   const addItemContent = addItemArt.map((item, index) => {
     // Додаємо id до кожного елементу, якщо він існує
@@ -118,70 +111,30 @@ function renderCard() {
     `
   })
 
-  existingUl.append(...addItemContent)
-
   catalog.querySelector('.catalog-list').innerHTML = addItemContent.join('')
+}
 
-  if (addItemContent.length > 0) {
-    const lastItem = addItemContent[addItemContent.length - 1]
-    if (lastItem instanceof Element) {
-      lastItem.scrollIntoView({ behavior: 'smooth' })
-    }
+renderCard()
+
+const catalogList = catalog.querySelector('.catalog-list')
+
+catalogList.addEventListener('click', function (e) {
+  const clickedItem = e.target.closest('.catalog-item')
+  if (clickedItem) {
+    const itemId = clickedItem.id
+    renderCardProduct(itemId)
+
+    const desiredCard = cardPouf.find(item => item.id === itemId)
+
+    const clickedItemParams = new URLSearchParams()
+    clickedItemParams.set('name', desiredCard?.name || '')
+    clickedItemParams.set('artNum', desiredCard?.artNum || '')
+    clickedItemParams.set('price', desiredCard?.price || '')
+    window.location.hash = clickedItemParams.toString()
+
+    localStorage.setItem('activeItemId', itemId)
   }
-
-  itemShow += itemsToShow
-
-  if (itemShow >= listPouf.length) {
-    loadMoreBtn.remove()
-    const btnBack = document.createElement('button')
-    existingUl.append(btnBack)
-    btnBack.className = 'btnBack'
-    btnBack.innerHTML = `
-       <svg width="30" height="30" class="arrow-back">
-        <use href="./images/icons.svg#icon-arrow-back"></use>
-       </svg>
-      `
-    btnBack.addEventListener('click', () => {
-      existingUl.scrollIntoView({ behavior: 'smooth' })
-    })
-  }
-}
-
-const catalogList = catalog.querySelector('.catalog-list');
-if (catalogList) {
-  catalogList.addEventListener('click', function (e) {
-    const clickedItem = e.target.closest('.catalog-item')
-    if (clickedItem) {
-      const itemId = clickedItem.id
-      renderCardProduct(itemId)
-
-      const desiredCard = cardPouf.find(item => item.id === itemId)
-
-      const clickedItemParams = new URLSearchParams()
-      clickedItemParams.set('name', desiredCard?.name || '')
-      clickedItemParams.set('artNum', desiredCard?.artNum || '')
-      clickedItemParams.set('price', desiredCard?.price || '')
-      window.location.hash = clickedItemParams.toString()
-
-      localStorage.setItem('activeItemId', itemId)
-    }
-  })
-}
-
-const loadMoreBtn = document.querySelector('.btn-loadMore')
-
-if (loadMoreBtn) {
-  loadMoreBtn.addEventListener('click', function () {
-    itemShow += itemsToShow
-    renderCard()
-  })
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  renderCard()
 })
-
-loadMoreBtn.addEventListener('click', renderCard)
 
 document.addEventListener('DOMContentLoaded', function () {
   const activeItemId = localStorage.getItem('activeItemId')
