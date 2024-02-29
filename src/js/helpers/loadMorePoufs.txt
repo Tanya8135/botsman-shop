@@ -16,7 +16,7 @@ function showMoreItems() {
     const updatedItems = storedItems.concat(additionalItems);
 
     // Збережіть оновлений список у Local Storage
-    localStorage.setItem('catalogItems', JSON.stringify(updatedItems));
+    localStorage.setItem('catalogItems', JSON.stringify(additionalItems));
 
     const itemsToAdd = additionalItems.map(item => {
         const li = document.createElement('li');
@@ -31,8 +31,8 @@ function showMoreItems() {
                 alt="${item.alt}"
             />
             <div class="catalog-name">
-            <p class="catalog-name__text">${item.name}</p>
-          </div>
+                <p class="catalog-name__text">${item.name}</p>
+            </div>
         `;
 
         li.appendChild(article);
@@ -46,7 +46,6 @@ function showMoreItems() {
             itemsToAdd[itemsToAdd.length - 1].scrollIntoView({ behavior: 'smooth' });
         }, 200);
     }
-
 
     itemShow += itemsToShow;
 
@@ -65,12 +64,10 @@ function showMoreItems() {
             existingUl.scrollIntoView({ behavior: 'smooth' });
         });
     }
+
     console.log(itemsToAdd);
-    document.addEventListener('DOMContentLoaded', () => {
-        // Викликайте showMoreItems при завантаженні сторінки
-        showMoreItems()
-    })
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Викликайте showMoreItems при завантаженні сторінки
